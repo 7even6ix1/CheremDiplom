@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44c4a0fe8a8543bf8b23eceab53ace9d" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="VladCheremDiplomModel.CarModels" Width="1.5" PointX="3" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.Clients" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.Colors" Width="1.5" PointX="3" PointY="24.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.Countries" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.Cuzov" Width="1.5" PointX="1.5" PointY="27.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.DTP" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.EnginePlace" Width="1.5" PointX="1.5" PointY="29.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.EngineTypes" Width="1.5" PointX="1.5" PointY="38.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.EngineVolume" Width="1.5" PointX="1.5" PointY="40.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.FuelType" Width="1.5" PointX="1.5" PointY="42.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.Gender" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.KPPTypes" Width="1.5" PointX="1.5" PointY="45.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.LoginData" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.Marks" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.RulPlace" Width="1.5" PointX="0.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.Sdelki" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.Sostoyanie" Width="1.5" PointX="3" PointY="48.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.TechInformation" Width="1.5" PointX="0.75" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.Workers" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.JustCars" Width="1.5" PointX="9.75" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.SdelkiView" Width="1.5" PointX="2.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.WorkersView" Width="1.5" PointX="9.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_CarModels_Countries" ManuallyRouted="false" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_CarModels_Marks" ManuallyRouted="false" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_CarModels_RulPlace" ManuallyRouted="false" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_CarModels_TechInformation" ManuallyRouted="false" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_Clients_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_Sdelki_Clients" ManuallyRouted="false" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_TechInformation_Cuzov" ManuallyRouted="false" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_TechInformation_EnginePlace" ManuallyRouted="false" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_Workers_Gender" ManuallyRouted="false" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_TechInformation_KPPTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_LoginData_Workers" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.Posts" Width="1.5" PointX="10.375" PointY="9.875" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_Workers_Posts" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.ClientsView" Width="1.5" PointX="5.375" PointY="11.75" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.ClientCars" Width="1.5" PointX="5.25" PointY="25.375" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_ClientCars_CarModels" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_ClientCars_Clients" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_ClientCars_Colors" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_ClientCars_Sostoyanie" />
+        <EntityTypeShape EntityType="VladCheremDiplomModel.Engines" Width="1.5" PointX="3.75" PointY="39.875" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_DTP_ClientCars" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_Engines_EngineTypes" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_Engines_EngineVolume" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_Engines_FuelType" />
+        <AssociationConnector Association="VladCheremDiplomModel.FK_TechInformation_Engines" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

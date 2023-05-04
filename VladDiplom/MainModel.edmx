@@ -1,0 +1,1759 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище VladCheremDiplomModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CarModels">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mark" Type="int" Nullable="false" />
+          <Property Name="TechInfo" Type="int" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Country" Type="int" Nullable="false" />
+          <Property Name="Rul" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClientCars">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Model" Type="int" Nullable="false" />
+          <Property Name="GosNomer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="VINNomer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Owner" Type="int" Nullable="false" />
+          <Property Name="Cost" Type="int" Nullable="false" />
+          <Property Name="Sostoyanie" Type="int" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="OwnerCount" Type="int" Nullable="false" />
+          <Property Name="Color" Type="int" Nullable="false" />
+          <Property Name="Photo" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Colors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cuzov">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cuzov" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DTP">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Car" Type="int" Nullable="false" />
+          <Property Name="Decription" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EnginePlace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Place" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Engines">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="Volume" Type="int" Nullable="false" />
+          <Property Name="Fuel" Type="int" Nullable="false" />
+          <Property Name="Cilinders" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EngineTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="EngineVolume">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Volume" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FuelType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KPPTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KPPType" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoginData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Worker" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Marks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Posts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Oklad" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RulPlace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sdelki">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Car" Type="int" Nullable="false" />
+          <Property Name="Pokupatel" Type="int" Nullable="false" />
+          <Property Name="Summa" Type="money" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sostoyanie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TechInformation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cuzov" Type="int" Nullable="false" />
+          <Property Name="Places" Type="int" Nullable="false" />
+          <Property Name="Doors" Type="int" Nullable="false" />
+          <Property Name="EngPlace" Type="int" Nullable="false" />
+          <Property Name="KPPType" Type="int" Nullable="false" />
+          <Property Name="Engine" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Workers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Birthdate" Type="date" Nullable="false" />
+          <Property Name="Gender" Type="int" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Post" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "VladCheremDiplom.dbo.ClientsView" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="ClientsView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Patronymic" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Gender" />
+            <PropertyRef Name="GosNomer" />
+            <PropertyRef Name="Mark" />
+            <PropertyRef Name="Model" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GosNomer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mark" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "VladCheremDiplom.dbo.JustCars" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="JustCars">
+          <Key>
+            <PropertyRef Name="Mark" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="GosNomer" />
+            <PropertyRef Name="Cost" />
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Mark" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GosNomer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cost" Type="money" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "VladCheremDiplom.dbo.SdelkiView" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="SdelkiView">
+          <Key>
+            <PropertyRef Name="Buyer" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Mark" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="GosNomer" />
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="Summa" />
+            <PropertyRef Name="Seller" />
+            <PropertyRef Name="Date" />
+          </Key>
+          <Property Name="Buyer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Mark" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="GosNomer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Summa" Type="money" Nullable="false" />
+          <Property Name="Seller" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "VladCheremDiplom.dbo.WorkersView" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="WorkersView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Patronymic" />
+            <PropertyRef Name="Birthdate" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Post" />
+            <PropertyRef Name="Oklad" />
+            <PropertyRef Name="Gender" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Birthdate" Type="date" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Post" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Oklad" Type="money" Nullable="false" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CarModels_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+          <End Role="CarModels" Type="Self.CarModels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CarModels">
+              <PropertyRef Name="Country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CarModels_Marks">
+          <End Role="Marks" Type="Self.Marks" Multiplicity="1" />
+          <End Role="CarModels" Type="Self.CarModels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marks">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CarModels">
+              <PropertyRef Name="Mark" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CarModels_RulPlace">
+          <End Role="RulPlace" Type="Self.RulPlace" Multiplicity="1" />
+          <End Role="CarModels" Type="Self.CarModels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RulPlace">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CarModels">
+              <PropertyRef Name="Rul" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CarModels_TechInformation">
+          <End Role="TechInformation" Type="Self.TechInformation" Multiplicity="1" />
+          <End Role="CarModels" Type="Self.CarModels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TechInformation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CarModels">
+              <PropertyRef Name="TechInfo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientCars_CarModels">
+          <End Role="CarModels" Type="Self.CarModels" Multiplicity="1" />
+          <End Role="ClientCars" Type="Self.ClientCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarModels">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClientCars">
+              <PropertyRef Name="Model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientCars_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="ClientCars" Type="Self.ClientCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClientCars">
+              <PropertyRef Name="Owner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientCars_Colors">
+          <End Role="Colors" Type="Self.Colors" Multiplicity="1" />
+          <End Role="ClientCars" Type="Self.ClientCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClientCars">
+              <PropertyRef Name="Color" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientCars_Sostoyanie">
+          <End Role="Sostoyanie" Type="Self.Sostoyanie" Multiplicity="1" />
+          <End Role="ClientCars" Type="Self.ClientCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sostoyanie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClientCars">
+              <PropertyRef Name="Sostoyanie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DTP_ClientCars">
+          <End Role="ClientCars" Type="Self.ClientCars" Multiplicity="1" />
+          <End Role="DTP" Type="Self.DTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientCars">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DTP">
+              <PropertyRef Name="Car" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Engines_EngineTypes">
+          <End Role="EngineTypes" Type="Self.EngineTypes" Multiplicity="1" />
+          <End Role="Engines" Type="Self.Engines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EngineTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Engines">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Engines_EngineVolume">
+          <End Role="EngineVolume" Type="Self.EngineVolume" Multiplicity="1" />
+          <End Role="Engines" Type="Self.Engines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EngineVolume">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Engines">
+              <PropertyRef Name="Volume" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Engines_FuelType">
+          <End Role="FuelType" Type="Self.FuelType" Multiplicity="1" />
+          <End Role="Engines" Type="Self.Engines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FuelType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Engines">
+              <PropertyRef Name="Fuel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoginData_Workers">
+          <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+          <End Role="LoginData" Type="Self.LoginData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LoginData">
+              <PropertyRef Name="Worker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sdelki_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Sdelki" Type="Self.Sdelki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sdelki">
+              <PropertyRef Name="Pokupatel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TechInformation_Cuzov">
+          <End Role="Cuzov" Type="Self.Cuzov" Multiplicity="1" />
+          <End Role="TechInformation" Type="Self.TechInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuzov">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TechInformation">
+              <PropertyRef Name="Cuzov" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TechInformation_EnginePlace">
+          <End Role="EnginePlace" Type="Self.EnginePlace" Multiplicity="1" />
+          <End Role="TechInformation" Type="Self.TechInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnginePlace">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TechInformation">
+              <PropertyRef Name="EngPlace" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TechInformation_Engines">
+          <End Role="Engines" Type="Self.Engines" Multiplicity="1" />
+          <End Role="TechInformation" Type="Self.TechInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Engines">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TechInformation">
+              <PropertyRef Name="Engine" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TechInformation_KPPTypes">
+          <End Role="KPPTypes" Type="Self.KPPTypes" Multiplicity="1" />
+          <End Role="TechInformation" Type="Self.TechInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KPPTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TechInformation">
+              <PropertyRef Name="KPPType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Workers_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Workers">
+              <PropertyRef Name="Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Workers_Posts">
+          <End Role="Posts" Type="Self.Posts" Multiplicity="1" />
+          <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Posts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Workers">
+              <PropertyRef Name="Post" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище VladCheremDiplomModelContainer">
+          <EntitySet Name="CarModels" EntityType="Self.CarModels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientCars" EntityType="Self.ClientCars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Colors" EntityType="Self.Colors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cuzov" EntityType="Self.Cuzov" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DTP" EntityType="Self.DTP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EnginePlace" EntityType="Self.EnginePlace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Engines" EntityType="Self.Engines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EngineTypes" EntityType="Self.EngineTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EngineVolume" EntityType="Self.EngineVolume" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FuelType" EntityType="Self.FuelType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KPPTypes" EntityType="Self.KPPTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoginData" EntityType="Self.LoginData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marks" EntityType="Self.Marks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Posts" EntityType="Self.Posts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RulPlace" EntityType="Self.RulPlace" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sdelki" EntityType="Self.Sdelki" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sostoyanie" EntityType="Self.Sostoyanie" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TechInformation" EntityType="Self.TechInformation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Workers" EntityType="Self.Workers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientsView" EntityType="Self.ClientsView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ClientsView].[Id] AS [Id], 
+    [ClientsView].[Surname] AS [Surname], 
+    [ClientsView].[Name] AS [Name], 
+    [ClientsView].[Patronymic] AS [Patronymic], 
+    [ClientsView].[Phone] AS [Phone], 
+    [ClientsView].[Gender] AS [Gender], 
+    [ClientsView].[GosNomer] AS [GosNomer], 
+    [ClientsView].[Mark] AS [Mark], 
+    [ClientsView].[Model] AS [Model]
+    FROM [dbo].[ClientsView] AS [ClientsView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="JustCars" EntityType="Self.JustCars" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [JustCars].[Mark] AS [Mark], 
+    [JustCars].[Model] AS [Model], 
+    [JustCars].[GosNomer] AS [GosNomer], 
+    [JustCars].[Cost] AS [Cost], 
+    [JustCars].[Year] AS [Year], 
+    [JustCars].[Name] AS [Name], 
+    [JustCars].[Surname] AS [Surname], 
+    [JustCars].[Phone] AS [Phone], 
+    [JustCars].[Id] AS [Id]
+    FROM [dbo].[JustCars] AS [JustCars]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SdelkiView" EntityType="Self.SdelkiView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SdelkiView].[Buyer] AS [Buyer], 
+    [SdelkiView].[Phone] AS [Phone], 
+    [SdelkiView].[Mark] AS [Mark], 
+    [SdelkiView].[Model] AS [Model], 
+    [SdelkiView].[GosNomer] AS [GosNomer], 
+    [SdelkiView].[Year] AS [Year], 
+    [SdelkiView].[Summa] AS [Summa], 
+    [SdelkiView].[Seller] AS [Seller], 
+    [SdelkiView].[Date] AS [Date]
+    FROM [dbo].[SdelkiView] AS [SdelkiView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="WorkersView" EntityType="Self.WorkersView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [WorkersView].[Id] AS [Id], 
+    [WorkersView].[Surname] AS [Surname], 
+    [WorkersView].[Name] AS [Name], 
+    [WorkersView].[Patronymic] AS [Patronymic], 
+    [WorkersView].[Birthdate] AS [Birthdate], 
+    [WorkersView].[Phone] AS [Phone], 
+    [WorkersView].[Address] AS [Address], 
+    [WorkersView].[Post] AS [Post], 
+    [WorkersView].[Oklad] AS [Oklad], 
+    [WorkersView].[Gender] AS [Gender]
+    FROM [dbo].[WorkersView] AS [WorkersView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CarModels_Countries" Association="Self.FK_CarModels_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="CarModels" EntitySet="CarModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CarModels_Marks" Association="Self.FK_CarModels_Marks">
+            <End Role="Marks" EntitySet="Marks" />
+            <End Role="CarModels" EntitySet="CarModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CarModels_RulPlace" Association="Self.FK_CarModels_RulPlace">
+            <End Role="RulPlace" EntitySet="RulPlace" />
+            <End Role="CarModels" EntitySet="CarModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CarModels_TechInformation" Association="Self.FK_CarModels_TechInformation">
+            <End Role="TechInformation" EntitySet="TechInformation" />
+            <End Role="CarModels" EntitySet="CarModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientCars_CarModels" Association="Self.FK_ClientCars_CarModels">
+            <End Role="CarModels" EntitySet="CarModels" />
+            <End Role="ClientCars" EntitySet="ClientCars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientCars_Clients" Association="Self.FK_ClientCars_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="ClientCars" EntitySet="ClientCars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientCars_Colors" Association="Self.FK_ClientCars_Colors">
+            <End Role="Colors" EntitySet="Colors" />
+            <End Role="ClientCars" EntitySet="ClientCars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientCars_Sostoyanie" Association="Self.FK_ClientCars_Sostoyanie">
+            <End Role="Sostoyanie" EntitySet="Sostoyanie" />
+            <End Role="ClientCars" EntitySet="ClientCars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_Gender" Association="Self.FK_Clients_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DTP_ClientCars" Association="Self.FK_DTP_ClientCars">
+            <End Role="ClientCars" EntitySet="ClientCars" />
+            <End Role="DTP" EntitySet="DTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Engines_EngineTypes" Association="Self.FK_Engines_EngineTypes">
+            <End Role="EngineTypes" EntitySet="EngineTypes" />
+            <End Role="Engines" EntitySet="Engines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Engines_EngineVolume" Association="Self.FK_Engines_EngineVolume">
+            <End Role="EngineVolume" EntitySet="EngineVolume" />
+            <End Role="Engines" EntitySet="Engines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Engines_FuelType" Association="Self.FK_Engines_FuelType">
+            <End Role="FuelType" EntitySet="FuelType" />
+            <End Role="Engines" EntitySet="Engines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoginData_Workers" Association="Self.FK_LoginData_Workers">
+            <End Role="Workers" EntitySet="Workers" />
+            <End Role="LoginData" EntitySet="LoginData" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sdelki_Clients" Association="Self.FK_Sdelki_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Sdelki" EntitySet="Sdelki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TechInformation_Cuzov" Association="Self.FK_TechInformation_Cuzov">
+            <End Role="Cuzov" EntitySet="Cuzov" />
+            <End Role="TechInformation" EntitySet="TechInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TechInformation_EnginePlace" Association="Self.FK_TechInformation_EnginePlace">
+            <End Role="EnginePlace" EntitySet="EnginePlace" />
+            <End Role="TechInformation" EntitySet="TechInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TechInformation_Engines" Association="Self.FK_TechInformation_Engines">
+            <End Role="Engines" EntitySet="Engines" />
+            <End Role="TechInformation" EntitySet="TechInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TechInformation_KPPTypes" Association="Self.FK_TechInformation_KPPTypes">
+            <End Role="KPPTypes" EntitySet="KPPTypes" />
+            <End Role="TechInformation" EntitySet="TechInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Workers_Gender" Association="Self.FK_Workers_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Workers" EntitySet="Workers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Workers_Posts" Association="Self.FK_Workers_Posts">
+            <End Role="Posts" EntitySet="Posts" />
+            <End Role="Workers" EntitySet="Workers" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="VladCheremDiplomModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CarModels">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mark" Type="Int32" Nullable="false" />
+          <Property Name="TechInfo" Type="Int32" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Country" Type="Int32" Nullable="false" />
+          <Property Name="Rul" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Countries" Relationship="Self.FK_CarModels_Countries" FromRole="CarModels" ToRole="Countries" />
+          <NavigationProperty Name="Marks" Relationship="Self.FK_CarModels_Marks" FromRole="CarModels" ToRole="Marks" />
+          <NavigationProperty Name="RulPlace" Relationship="Self.FK_CarModels_RulPlace" FromRole="CarModels" ToRole="RulPlace" />
+          <NavigationProperty Name="TechInformation" Relationship="Self.FK_CarModels_TechInformation" FromRole="CarModels" ToRole="TechInformation" />
+          <NavigationProperty Name="ClientCars" Relationship="VladCheremDiplomModel.FK_ClientCars_CarModels" FromRole="CarModels" ToRole="ClientCars" />
+        </EntityType>
+        <EntityType Name="Clients">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gender1" Relationship="Self.FK_Clients_Gender" FromRole="Clients" ToRole="Gender" />
+          <NavigationProperty Name="Sdelki" Relationship="Self.FK_Sdelki_Clients" FromRole="Clients" ToRole="Sdelki" />
+          <NavigationProperty Name="ClientCars" Relationship="VladCheremDiplomModel.FK_ClientCars_Clients" FromRole="Clients" ToRole="ClientCars" />
+        </EntityType>
+        <EntityType Name="Colors">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ClientCars" Relationship="VladCheremDiplomModel.FK_ClientCars_Colors" FromRole="Colors" ToRole="ClientCars" />
+        </EntityType>
+        <EntityType Name="Countries">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CarModels" Relationship="Self.FK_CarModels_Countries" FromRole="Countries" ToRole="CarModels" />
+        </EntityType>
+        <EntityType Name="Cuzov">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Cuzov1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TechInformation" Relationship="Self.FK_TechInformation_Cuzov" FromRole="Cuzov" ToRole="TechInformation" />
+        </EntityType>
+        <EntityType Name="DTP">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Car" Type="Int32" Nullable="false" />
+          <Property Name="Decription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="ClientCars" Relationship="VladCheremDiplomModel.FK_DTP_ClientCars" FromRole="DTP" ToRole="ClientCars" />
+        </EntityType>
+        <EntityType Name="EnginePlace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TechInformation" Relationship="Self.FK_TechInformation_EnginePlace" FromRole="EnginePlace" ToRole="TechInformation" />
+        </EntityType>
+        <EntityType Name="EngineTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Engines" Relationship="VladCheremDiplomModel.FK_Engines_EngineTypes" FromRole="EngineTypes" ToRole="Engines" />
+        </EntityType>
+        <EntityType Name="EngineVolume">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Volume" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Engines" Relationship="VladCheremDiplomModel.FK_Engines_EngineVolume" FromRole="EngineVolume" ToRole="Engines" />
+        </EntityType>
+        <EntityType Name="FuelType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Engines" Relationship="VladCheremDiplomModel.FK_Engines_FuelType" FromRole="FuelType" ToRole="Engines" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Clients_Gender" FromRole="Gender" ToRole="Clients" />
+          <NavigationProperty Name="Workers" Relationship="Self.FK_Workers_Gender" FromRole="Gender" ToRole="Workers" />
+        </EntityType>
+        <EntityType Name="KPPTypes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="KPPType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="TechInformation" Relationship="Self.FK_TechInformation_KPPTypes" FromRole="KPPTypes" ToRole="TechInformation" />
+        </EntityType>
+        <EntityType Name="LoginData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Worker" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Workers" Relationship="Self.FK_LoginData_Workers" FromRole="LoginData" ToRole="Workers" />
+        </EntityType>
+        <EntityType Name="Marks">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CarModels" Relationship="Self.FK_CarModels_Marks" FromRole="Marks" ToRole="CarModels" />
+        </EntityType>
+        <EntityType Name="RulPlace">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CarModels" Relationship="Self.FK_CarModels_RulPlace" FromRole="RulPlace" ToRole="CarModels" />
+        </EntityType>
+        <EntityType Name="Sdelki">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Car" Type="Int32" Nullable="false" />
+          <Property Name="Pokupatel" Type="Int32" Nullable="false" />
+          <Property Name="Summa" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="Clients" Relationship="Self.FK_Sdelki_Clients" FromRole="Sdelki" ToRole="Clients" />
+        </EntityType>
+        <EntityType Name="Sostoyanie">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ClientCars" Relationship="VladCheremDiplomModel.FK_ClientCars_Sostoyanie" FromRole="Sostoyanie" ToRole="ClientCars" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TechInformation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Cuzov" Type="Int32" Nullable="false" />
+          <Property Name="Places" Type="Int32" Nullable="false" />
+          <Property Name="Doors" Type="Int32" Nullable="false" />
+          <Property Name="EngPlace" Type="Int32" Nullable="false" />
+          <Property Name="KPPType" Type="Int32" Nullable="false" />
+          <Property Name="Engine" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CarModels" Relationship="Self.FK_CarModels_TechInformation" FromRole="TechInformation" ToRole="CarModels" />
+          <NavigationProperty Name="Cuzov1" Relationship="Self.FK_TechInformation_Cuzov" FromRole="TechInformation" ToRole="Cuzov" />
+          <NavigationProperty Name="EnginePlace" Relationship="Self.FK_TechInformation_EnginePlace" FromRole="TechInformation" ToRole="EnginePlace" />
+          <NavigationProperty Name="KPPTypes" Relationship="Self.FK_TechInformation_KPPTypes" FromRole="TechInformation" ToRole="KPPTypes" />
+          <NavigationProperty Name="Engines" Relationship="VladCheremDiplomModel.FK_TechInformation_Engines" FromRole="TechInformation" ToRole="Engines" />
+        </EntityType>
+        <EntityType Name="Workers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Birthdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Gender" Type="Int32" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Post" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Gender1" Relationship="Self.FK_Workers_Gender" FromRole="Workers" ToRole="Gender" />
+          <NavigationProperty Name="LoginData" Relationship="Self.FK_LoginData_Workers" FromRole="Workers" ToRole="LoginData" />
+          <NavigationProperty Name="Posts" Relationship="VladCheremDiplomModel.FK_Workers_Posts" FromRole="Workers" ToRole="Posts" />
+        </EntityType>
+        <EntityType Name="JustCars">
+          <Key>
+            <PropertyRef Name="Mark" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="GosNomer" />
+            <PropertyRef Name="Cost" />
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Mark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GosNomer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SdelkiView">
+          <Key>
+            <PropertyRef Name="Buyer" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Mark" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="GosNomer" />
+            <PropertyRef Name="Year" />
+            <PropertyRef Name="Summa" />
+            <PropertyRef Name="Seller" />
+            <PropertyRef Name="Date" />
+          </Key>
+          <Property Name="Buyer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Mark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GosNomer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Summa" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Seller" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="WorkersView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Patronymic" />
+            <PropertyRef Name="Birthdate" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="Post" />
+            <PropertyRef Name="Oklad" />
+            <PropertyRef Name="Gender" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Birthdate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Post" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Oklad" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CarModels_Countries">
+          <End Role="Countries" Type="Self.Countries" Multiplicity="1" />
+          <End Role="CarModels" Type="Self.CarModels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Countries">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CarModels">
+              <PropertyRef Name="Country" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CarModels_Marks">
+          <End Role="Marks" Type="Self.Marks" Multiplicity="1" />
+          <End Role="CarModels" Type="Self.CarModels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marks">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CarModels">
+              <PropertyRef Name="Mark" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CarModels_RulPlace">
+          <End Role="RulPlace" Type="Self.RulPlace" Multiplicity="1" />
+          <End Role="CarModels" Type="Self.CarModels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RulPlace">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CarModels">
+              <PropertyRef Name="Rul" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CarModels_TechInformation">
+          <End Role="TechInformation" Type="Self.TechInformation" Multiplicity="1" />
+          <End Role="CarModels" Type="Self.CarModels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TechInformation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CarModels">
+              <PropertyRef Name="TechInfo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Clients_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Clients" Type="Self.Clients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Clients">
+              <PropertyRef Name="Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Sdelki_Clients">
+          <End Role="Clients" Type="Self.Clients" Multiplicity="1" />
+          <End Role="Sdelki" Type="Self.Sdelki" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Sdelki">
+              <PropertyRef Name="Pokupatel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TechInformation_Cuzov">
+          <End Role="Cuzov" Type="Self.Cuzov" Multiplicity="1" />
+          <End Role="TechInformation" Type="Self.TechInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cuzov">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TechInformation">
+              <PropertyRef Name="Cuzov" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TechInformation_EnginePlace">
+          <End Role="EnginePlace" Type="Self.EnginePlace" Multiplicity="1" />
+          <End Role="TechInformation" Type="Self.TechInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EnginePlace">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TechInformation">
+              <PropertyRef Name="EngPlace" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Workers_Gender">
+          <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Workers" Type="Self.Workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Gender">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Workers">
+              <PropertyRef Name="Gender" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TechInformation_KPPTypes">
+          <End Role="KPPTypes" Type="Self.KPPTypes" Multiplicity="1" />
+          <End Role="TechInformation" Type="Self.TechInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KPPTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TechInformation">
+              <PropertyRef Name="KPPType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_LoginData_Workers">
+          <End Role="Workers" Type="Self.Workers" Multiplicity="1" />
+          <End Role="LoginData" Type="Self.LoginData" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Workers">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="LoginData">
+              <PropertyRef Name="Worker" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="VDEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CarModels" EntityType="Self.CarModels" />
+          <EntitySet Name="Clients" EntityType="Self.Clients" />
+          <EntitySet Name="Colors" EntityType="Self.Colors" />
+          <EntitySet Name="Countries" EntityType="Self.Countries" />
+          <EntitySet Name="Cuzov" EntityType="Self.Cuzov" />
+          <EntitySet Name="DTP" EntityType="Self.DTP" />
+          <EntitySet Name="EnginePlace" EntityType="Self.EnginePlace" />
+          <EntitySet Name="EngineTypes" EntityType="Self.EngineTypes" />
+          <EntitySet Name="EngineVolume" EntityType="Self.EngineVolume" />
+          <EntitySet Name="FuelType" EntityType="Self.FuelType" />
+          <EntitySet Name="Gender" EntityType="Self.Gender" />
+          <EntitySet Name="KPPTypes" EntityType="Self.KPPTypes" />
+          <EntitySet Name="LoginData" EntityType="Self.LoginData" />
+          <EntitySet Name="Marks" EntityType="Self.Marks" />
+          <EntitySet Name="RulPlace" EntityType="Self.RulPlace" />
+          <EntitySet Name="Sdelki" EntityType="Self.Sdelki" />
+          <EntitySet Name="Sostoyanie" EntityType="Self.Sostoyanie" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="TechInformation" EntityType="Self.TechInformation" />
+          <EntitySet Name="Workers" EntityType="Self.Workers" />
+          <EntitySet Name="JustCars" EntityType="Self.JustCars" />
+          <EntitySet Name="SdelkiView" EntityType="Self.SdelkiView" />
+          <EntitySet Name="WorkersView" EntityType="Self.WorkersView" />
+          <AssociationSet Name="FK_CarModels_Countries" Association="Self.FK_CarModels_Countries">
+            <End Role="Countries" EntitySet="Countries" />
+            <End Role="CarModels" EntitySet="CarModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CarModels_Marks" Association="Self.FK_CarModels_Marks">
+            <End Role="Marks" EntitySet="Marks" />
+            <End Role="CarModels" EntitySet="CarModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CarModels_RulPlace" Association="Self.FK_CarModels_RulPlace">
+            <End Role="RulPlace" EntitySet="RulPlace" />
+            <End Role="CarModels" EntitySet="CarModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CarModels_TechInformation" Association="Self.FK_CarModels_TechInformation">
+            <End Role="TechInformation" EntitySet="TechInformation" />
+            <End Role="CarModels" EntitySet="CarModels" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Clients_Gender" Association="Self.FK_Clients_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Clients" EntitySet="Clients" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Sdelki_Clients" Association="Self.FK_Sdelki_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="Sdelki" EntitySet="Sdelki" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TechInformation_Cuzov" Association="Self.FK_TechInformation_Cuzov">
+            <End Role="Cuzov" EntitySet="Cuzov" />
+            <End Role="TechInformation" EntitySet="TechInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TechInformation_EnginePlace" Association="Self.FK_TechInformation_EnginePlace">
+            <End Role="EnginePlace" EntitySet="EnginePlace" />
+            <End Role="TechInformation" EntitySet="TechInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Workers_Gender" Association="Self.FK_Workers_Gender">
+            <End Role="Gender" EntitySet="Gender" />
+            <End Role="Workers" EntitySet="Workers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TechInformation_KPPTypes" Association="Self.FK_TechInformation_KPPTypes">
+            <End Role="KPPTypes" EntitySet="KPPTypes" />
+            <End Role="TechInformation" EntitySet="TechInformation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_LoginData_Workers" Association="Self.FK_LoginData_Workers">
+            <End Role="Workers" EntitySet="Workers" />
+            <End Role="LoginData" EntitySet="LoginData" />
+          </AssociationSet>
+          <EntitySet Name="Posts" EntityType="VladCheremDiplomModel.Posts" />
+          <AssociationSet Name="FK_Workers_Posts" Association="VladCheremDiplomModel.FK_Workers_Posts">
+            <End Role="Posts" EntitySet="Posts" />
+            <End Role="Workers" EntitySet="Workers" />
+          </AssociationSet>
+          <EntitySet Name="ClientsView" EntityType="VladCheremDiplomModel.ClientsView" />
+          <EntitySet Name="ClientCars" EntityType="VladCheremDiplomModel.ClientCars" />
+          <AssociationSet Name="FK_ClientCars_CarModels" Association="VladCheremDiplomModel.FK_ClientCars_CarModels">
+            <End Role="CarModels" EntitySet="CarModels" />
+            <End Role="ClientCars" EntitySet="ClientCars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientCars_Clients" Association="VladCheremDiplomModel.FK_ClientCars_Clients">
+            <End Role="Clients" EntitySet="Clients" />
+            <End Role="ClientCars" EntitySet="ClientCars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientCars_Colors" Association="VladCheremDiplomModel.FK_ClientCars_Colors">
+            <End Role="Colors" EntitySet="Colors" />
+            <End Role="ClientCars" EntitySet="ClientCars" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ClientCars_Sostoyanie" Association="VladCheremDiplomModel.FK_ClientCars_Sostoyanie">
+            <End Role="Sostoyanie" EntitySet="Sostoyanie" />
+            <End Role="ClientCars" EntitySet="ClientCars" />
+          </AssociationSet>
+          <EntitySet Name="Engines" EntityType="VladCheremDiplomModel.Engines" />
+          <AssociationSet Name="FK_DTP_ClientCars" Association="VladCheremDiplomModel.FK_DTP_ClientCars">
+            <End Role="ClientCars" EntitySet="ClientCars" />
+            <End Role="DTP" EntitySet="DTP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Engines_EngineTypes" Association="VladCheremDiplomModel.FK_Engines_EngineTypes">
+            <End Role="EngineTypes" EntitySet="EngineTypes" />
+            <End Role="Engines" EntitySet="Engines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Engines_EngineVolume" Association="VladCheremDiplomModel.FK_Engines_EngineVolume">
+            <End Role="EngineVolume" EntitySet="EngineVolume" />
+            <End Role="Engines" EntitySet="Engines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Engines_FuelType" Association="VladCheremDiplomModel.FK_Engines_FuelType">
+            <End Role="FuelType" EntitySet="FuelType" />
+            <End Role="Engines" EntitySet="Engines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TechInformation_Engines" Association="VladCheremDiplomModel.FK_TechInformation_Engines">
+            <End Role="Engines" EntitySet="Engines" />
+            <End Role="TechInformation" EntitySet="TechInformation" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Posts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Oklad" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Workers" Relationship="VladCheremDiplomModel.FK_Workers_Posts" FromRole="Posts" ToRole="Workers" />
+        </EntityType>
+        <Association Name="FK_Workers_Posts">
+          <End Type="VladCheremDiplomModel.Posts" Role="Posts" Multiplicity="1" />
+          <End Type="VladCheremDiplomModel.Workers" Role="Workers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Posts">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Workers">
+              <PropertyRef Name="Post" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ClientsView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Surname" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Patronymic" />
+            <PropertyRef Name="Phone" />
+            <PropertyRef Name="Gender" />
+            <PropertyRef Name="GosNomer" />
+            <PropertyRef Name="Mark" />
+            <PropertyRef Name="Model" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Surname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="GosNomer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Mark" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ClientCars">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Model" Type="Int32" Nullable="false" />
+          <Property Name="GosNomer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="VINNomer" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Owner" Type="Int32" Nullable="false" />
+          <Property Name="Cost" Type="Int32" Nullable="false" />
+          <Property Name="Sostoyanie" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OwnerCount" Type="Int32" Nullable="false" />
+          <Property Name="Color" Type="Int32" Nullable="false" />
+          <Property Name="Photo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="CarModels" Relationship="VladCheremDiplomModel.FK_ClientCars_CarModels" FromRole="ClientCars" ToRole="CarModels" />
+          <NavigationProperty Name="Clients" Relationship="VladCheremDiplomModel.FK_ClientCars_Clients" FromRole="ClientCars" ToRole="Clients" />
+          <NavigationProperty Name="Colors" Relationship="VladCheremDiplomModel.FK_ClientCars_Colors" FromRole="ClientCars" ToRole="Colors" />
+          <NavigationProperty Name="Sostoyanie1" Relationship="VladCheremDiplomModel.FK_ClientCars_Sostoyanie" FromRole="ClientCars" ToRole="Sostoyanie" />
+          <NavigationProperty Name="DTP" Relationship="VladCheremDiplomModel.FK_DTP_ClientCars" FromRole="ClientCars" ToRole="DTP" />
+        </EntityType>
+        <Association Name="FK_ClientCars_CarModels">
+          <End Type="VladCheremDiplomModel.CarModels" Role="CarModels" Multiplicity="1" />
+          <End Type="VladCheremDiplomModel.ClientCars" Role="ClientCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CarModels">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClientCars">
+              <PropertyRef Name="Model" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientCars_Clients">
+          <End Type="VladCheremDiplomModel.Clients" Role="Clients" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="VladCheremDiplomModel.ClientCars" Role="ClientCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Clients">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClientCars">
+              <PropertyRef Name="Owner" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientCars_Colors">
+          <End Type="VladCheremDiplomModel.Colors" Role="Colors" Multiplicity="1" />
+          <End Type="VladCheremDiplomModel.ClientCars" Role="ClientCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Colors">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClientCars">
+              <PropertyRef Name="Color" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ClientCars_Sostoyanie">
+          <End Type="VladCheremDiplomModel.Sostoyanie" Role="Sostoyanie" Multiplicity="1" />
+          <End Type="VladCheremDiplomModel.ClientCars" Role="ClientCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sostoyanie">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ClientCars">
+              <PropertyRef Name="Sostoyanie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Engines">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Type" Type="Int32" Nullable="false" />
+          <Property Name="Volume" Type="Int32" Nullable="false" />
+          <Property Name="Fuel" Type="Int32" Nullable="false" />
+          <Property Name="Cilinders" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="EngineTypes" Relationship="VladCheremDiplomModel.FK_Engines_EngineTypes" FromRole="Engines" ToRole="EngineTypes" />
+          <NavigationProperty Name="EngineVolume" Relationship="VladCheremDiplomModel.FK_Engines_EngineVolume" FromRole="Engines" ToRole="EngineVolume" />
+          <NavigationProperty Name="FuelType" Relationship="VladCheremDiplomModel.FK_Engines_FuelType" FromRole="Engines" ToRole="FuelType" />
+          <NavigationProperty Name="TechInformation" Relationship="VladCheremDiplomModel.FK_TechInformation_Engines" FromRole="Engines" ToRole="TechInformation" />
+        </EntityType>
+        <Association Name="FK_DTP_ClientCars">
+          <End Type="VladCheremDiplomModel.ClientCars" Role="ClientCars" Multiplicity="1" />
+          <End Type="VladCheremDiplomModel.DTP" Role="DTP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClientCars">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="DTP">
+              <PropertyRef Name="Car" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Engines_EngineTypes">
+          <End Type="VladCheremDiplomModel.EngineTypes" Role="EngineTypes" Multiplicity="1" />
+          <End Type="VladCheremDiplomModel.Engines" Role="Engines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EngineTypes">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Engines">
+              <PropertyRef Name="Type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Engines_EngineVolume">
+          <End Type="VladCheremDiplomModel.EngineVolume" Role="EngineVolume" Multiplicity="1" />
+          <End Type="VladCheremDiplomModel.Engines" Role="Engines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="EngineVolume">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Engines">
+              <PropertyRef Name="Volume" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Engines_FuelType">
+          <End Type="VladCheremDiplomModel.FuelType" Role="FuelType" Multiplicity="1" />
+          <End Type="VladCheremDiplomModel.Engines" Role="Engines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FuelType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Engines">
+              <PropertyRef Name="Fuel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TechInformation_Engines">
+          <End Type="VladCheremDiplomModel.Engines" Role="Engines" Multiplicity="1" />
+          <End Type="VladCheremDiplomModel.TechInformation" Role="TechInformation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Engines">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TechInformation">
+              <PropertyRef Name="Engine" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище VladCheremDiplomModelContainer" CdmEntityContainer="VDEntities">
+          <EntitySetMapping Name="CarModels">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.CarModels">
+              <MappingFragment StoreEntitySet="CarModels">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="TechInfo" ColumnName="TechInfo" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Rul" ColumnName="Rul" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clients">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.Clients">
+              <MappingFragment StoreEntitySet="Clients">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Colors">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.Colors">
+              <MappingFragment StoreEntitySet="Colors">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.Countries">
+              <MappingFragment StoreEntitySet="Countries">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cuzov">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.Cuzov">
+              <MappingFragment StoreEntitySet="Cuzov">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cuzov1" ColumnName="Cuzov" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DTP">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.DTP">
+              <MappingFragment StoreEntitySet="DTP">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Car" ColumnName="Car" />
+                <ScalarProperty Name="Decription" ColumnName="Decription" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EnginePlace">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.EnginePlace">
+              <MappingFragment StoreEntitySet="EnginePlace">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Place" ColumnName="Place" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EngineTypes">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.EngineTypes">
+              <MappingFragment StoreEntitySet="EngineTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EngineVolume">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.EngineVolume">
+              <MappingFragment StoreEntitySet="EngineVolume">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FuelType">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.FuelType">
+              <MappingFragment StoreEntitySet="FuelType">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gender">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.Gender">
+              <MappingFragment StoreEntitySet="Gender">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KPPTypes">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.KPPTypes">
+              <MappingFragment StoreEntitySet="KPPTypes">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="KPPType" ColumnName="KPPType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginData">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.LoginData">
+              <MappingFragment StoreEntitySet="LoginData">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Worker" ColumnName="Worker" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marks">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.Marks">
+              <MappingFragment StoreEntitySet="Marks">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RulPlace">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.RulPlace">
+              <MappingFragment StoreEntitySet="RulPlace">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sdelki">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.Sdelki">
+              <MappingFragment StoreEntitySet="Sdelki">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Car" ColumnName="Car" />
+                <ScalarProperty Name="Pokupatel" ColumnName="Pokupatel" />
+                <ScalarProperty Name="Summa" ColumnName="Summa" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sostoyanie">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.Sostoyanie">
+              <MappingFragment StoreEntitySet="Sostoyanie">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TechInformation">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.TechInformation">
+              <MappingFragment StoreEntitySet="TechInformation">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cuzov" ColumnName="Cuzov" />
+                <ScalarProperty Name="Places" ColumnName="Places" />
+                <ScalarProperty Name="Doors" ColumnName="Doors" />
+                <ScalarProperty Name="EngPlace" ColumnName="EngPlace" />
+                <ScalarProperty Name="KPPType" ColumnName="KPPType" />
+                <ScalarProperty Name="Engine" ColumnName="Engine" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Workers">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.Workers">
+              <MappingFragment StoreEntitySet="Workers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="JustCars">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.JustCars">
+              <MappingFragment StoreEntitySet="JustCars">
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="GosNomer" ColumnName="GosNomer" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SdelkiView">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.SdelkiView">
+              <MappingFragment StoreEntitySet="SdelkiView">
+                <ScalarProperty Name="Buyer" ColumnName="Buyer" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="GosNomer" ColumnName="GosNomer" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Summa" ColumnName="Summa" />
+                <ScalarProperty Name="Seller" ColumnName="Seller" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WorkersView">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.WorkersView">
+              <MappingFragment StoreEntitySet="WorkersView">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Birthdate" ColumnName="Birthdate" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Post" ColumnName="Post" />
+                <ScalarProperty Name="Oklad" ColumnName="Oklad" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Posts">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.Posts">
+              <MappingFragment StoreEntitySet="Posts">
+                <ScalarProperty Name="Oklad" ColumnName="Oklad" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientsView">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.ClientsView">
+              <MappingFragment StoreEntitySet="ClientsView">
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Mark" ColumnName="Mark" />
+                <ScalarProperty Name="GosNomer" ColumnName="GosNomer" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Surname" ColumnName="Surname" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientCars">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.ClientCars">
+              <MappingFragment StoreEntitySet="ClientCars">
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="OwnerCount" ColumnName="OwnerCount" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Sostoyanie" ColumnName="Sostoyanie" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="VINNomer" ColumnName="VINNomer" />
+                <ScalarProperty Name="GosNomer" ColumnName="GosNomer" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Engines">
+            <EntityTypeMapping TypeName="VladCheremDiplomModel.Engines">
+              <MappingFragment StoreEntitySet="Engines">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Cilinders" ColumnName="Cilinders" />
+                <ScalarProperty Name="Fuel" ColumnName="Fuel" />
+                <ScalarProperty Name="Volume" ColumnName="Volume" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
